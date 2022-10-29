@@ -6,14 +6,20 @@ export const clean = (phoneNbr) => {
   var inputNumber = phoneNbr.replace(/[^\d]/g, '');
   
   const nbrLength = inputNumber.length;
-    let outputNumber = '';
+  let areaCode = '';
+  let exchangeCode = '';
+  let outputNumber = '';
 
   // Functions to handle checks for area and exchange code values
 
   function codeCheck(number) {
     let firstNbr = Array.from(number[0]);
     if(firstNbr == 0) {
-      return ''
+      return '0';
+    } else if(firstNbr == 1) {
+      return '1';
+    } else {
+      return 'other';
     }
   }
 
@@ -24,9 +30,13 @@ export const clean = (phoneNbr) => {
   } else if(nbrLength < 10) {
     throw new Error('Incorrect number of digits')
   } else if(nbrLength == 11) {
-    if(firstNbr === '1') {
-
+    let countryCode = codeCheck(inputNumber);
+    if(countryCode != '1') {
+      throw new Error('11 digits must start with 1')
     }
+  } else if(nbrLength == 10) {
+
+  }
   }
 
   
