@@ -1,4 +1,9 @@
 /* 
+****************************
+I have run out of time, but if I did it differently, I would go through and build another function instead of using the switch statements.
+Thank you so much for the challenge and to show what I have learned so far.  I appreciate the opportunity!
+
+****************************
 Project steps:
 
 Inputs = phone numbers of varying formats
